@@ -1,0 +1,4 @@
+{
+  // advance cursor to following line when selection = current line
+  "term_cursor_advance": true
+}

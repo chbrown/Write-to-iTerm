@@ -1,0 +1,29 @@
+[
+  /** the following goes in your Preferences / Key Bindings - User:
+
+  (You can edit that file with a quick ⌘+shift+p "key user")
+
+  {
+    "keys": ["shift+enter"],
+    "command": "send_selection_to_term"
+  }
+
+  Or if you want to only send text to the terminal in Python source files, for example, you can add a "context", which limits where the key-binding applies.
+
+  {
+    "keys": ["shift+enter"],
+    "command": "send_selection_to_term",
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "source.python" }
+    ]
+  }
+
+  but since we don't want to hijack (duplicate) any of your keybindings,
+  we don't actually set that here. Instead, for demo purposes, we use an
+  obscure key combo: control + alt + command + enter
+  */
+  {
+    "keys": ["ctrl+alt+super+enter"],
+    "command": "send_selection_to_term"
+  }
+]
