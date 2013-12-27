@@ -33,7 +33,7 @@ Currently, iTerm (technically, iTerm2.app) is weird and adds a newline to all in
 
 If you are getting a tab-completion prompt in iTerm2.app when sending it text, or it's not calling the text you sent it, ensure that your `~/.inputrc` config file does not contain the line, `Control-j: menu-complete`.
 
-See this diff for an example fix: chbrown/dotfiles@d0b0f3227b3a07127f13104f02b654751b592752
+See [this diff](https://github.com/chbrown/dotfiles/commit/d0b0f3227b3a07127f13104f02b654751b592752) for an example fix.
 
 
 ## TODO: Publish to Package Control
