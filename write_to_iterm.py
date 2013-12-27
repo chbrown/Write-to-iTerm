@@ -10,18 +10,20 @@ end tell
 '''.strip()
 
 
-class SendSelectionToTermCommand(sublime_plugin.TextCommand):
+class WriteSelectionToItermCommand(sublime_plugin.TextCommand):
     '''
-    command name: "send_selection_to_term"
+    This class name is automatically de-PascalCased to the command name: "write_selection_to_iterm"
     '''
     # def __init__(self, *args, **kwargs):
+        # self.settings = sublime.load_settings('Term.sublime-settings')
         # # but we don't, because we can just as easily re-read
         #   our config whenever we're called
-        # settings = sublime.load_settings('Term.sublime-settings')
-        # return super(SendSelectionToTermCommand, self).__init__(*args, **kwargs)
+        # return super(WriteSelectionToiTermCommand, self).__init__(*args, **kwargs)
 
-    def send_text(self, content):
-        content = content.rstrip('\n')
+    def write_text(self, content):
+        if content.endswith('\n'):
+            # I would use rstrip('\n') except that I can't say maxstrip=1
+            content = content[:-1]
         # escape slashes first so that we don't doubly-escape any of the intentional double-quote escapes
         content = content.replace('\\', '\\\\')
         # double quotes are the only thing we really need to escape
@@ -58,4 +60,4 @@ class SendSelectionToTermCommand(sublime_plugin.TextCommand):
                     view.sel().subtract(selection)
                     view.sel().add(sublime.Region(next_line, next_line))
 
-            self.send_text(content)
+            self.write_text(content)

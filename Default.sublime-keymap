@@ -5,14 +5,14 @@
 
   {
     "keys": ["shift+enter"],
-    "command": "send_selection_to_term"
+    "command": "write_selection_to_iterm"
   }
 
   Or if you want to only send text to the terminal in Python source files, for example, you can add a "context", which limits where the key-binding applies.
 
   {
     "keys": ["shift+enter"],
-    "command": "send_selection_to_term",
+    "command": "write_selection_to_iterm",
     "context": [
       { "key": "selector", "operator": "equal", "operand": "source.python" }
     ]
@@ -24,6 +24,6 @@
   */
   {
     "keys": ["ctrl+alt+super+enter"],
-    "command": "send_selection_to_term"
+    "command": "write_selection_to_iterm"
   }
 ]
