@@ -15,7 +15,7 @@ class WriteSelectionToItermCommand(sublime_plugin.TextCommand):
     This class name is automatically de-PascalCased to the command name: "write_selection_to_iterm"
     '''
     # def __init__(self, *args, **kwargs):
-        # self.settings = sublime.load_settings('Term.sublime-settings')
+        # self.settings = sublime.load_settings('Write to iTerm.sublime-settings')
         # # but we don't, because we can just as easily re-read
         #   our config whenever we're called
         # return super(WriteSelectionToiTermCommand, self).__init__(*args, **kwargs)
@@ -39,7 +39,7 @@ class WriteSelectionToItermCommand(sublime_plugin.TextCommand):
         # view.sel() is a list of 2-tuples which are cursor positions within the file.
         # for a single cursor point the left and right tuple items will be equal,
         #   in which case selection.empty() will be True
-        settings = sublime.load_settings('Term.sublime-settings')
+        settings = sublime.load_settings('Write to iTerm.sublime-settings')
         for selection in list(view.sel()):
             content = view.substr(selection)
             if not content:
